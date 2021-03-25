@@ -11,6 +11,7 @@ public class MiFactory {
         String propFileName = "MiFactory.properties";
         FileReader reader = new FileReader(propFileName);
         prop.load(reader);
+        System.out.println(prop.getProperty("sorter"));
         Sorter s = (Sorter) Class.forName(prop.getProperty("sorter")).getDeclaredConstructor().newInstance();
         return s;
     }
